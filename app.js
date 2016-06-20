@@ -2,8 +2,7 @@
 var express = require("express");
 var app = express();
 var router = express.Router();
-var async = require('async');
-var request = require('request');
+
 var path = __dirname + '/views/';
 var fs = require('fs');
 
