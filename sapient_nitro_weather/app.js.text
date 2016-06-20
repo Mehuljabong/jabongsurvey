@@ -1,0 +1,74 @@
+'use strict';
+var express = require("express");
+var app = express();
+var router = express.Router();
+var async = require('async');
+var request = require('request');
+var path = __dirname + '/views/';
+
+router.use(function (req,res,next) {
+    console.log("/" + req.method);
+    next();
+});
+
+router.get("/",function(req,res){
+    res.sendFile(path + "index.html");
+});
+
+
+
+function getTemp(city, cb) {
+    var apiUrl = 'https://query.yahooapis.com/v1/public/yql?q=';
+    apiUrl+= escape('select item.condition.temp from weather.forecast where woeid in (select woeid from geo.places(1) where text="'+city+'") and u="c"');
+    request.get(apiUrl+'&format=json', function(err, res, body){
+        if(err){
+            console.log(err.message);
+            cb(err);
+        } else {
+            try {
+                var data = JSON.parse(body);
+                cb(null, data.query.results.channel.item.condition.temp);
+            } catch(e){
+                cb(e.message);
+            }
+
+        }
+    })
+
+}
+router.get('/gettemp', function(req, res){
+
+    req.query.q = "delhi,gurgaon";
+    var cities = req.query.q || '';
+
+    if(cities == ''){
+        res.json({
+            "message" : "Please enter Indian cities name separated by comma(,) eg : Delhi"
+        })
+    } else {
+        var cityArray = cities.split(',');
+        var resData = [];
+        if(cityArray.length > 0) {
+            async.map(cityArray, getTemp, function(err, result){
+                if(err){
+                    console.log(err.message);
+                    res.send({"error": true, "message": err.message});
+                } else {
+                    res.send(
+                        {
+                            "Delhi" : result[0],
+                            "Gurgaon": result[1]
+                        }
+                    )
+                }
+            });
+        }
+
+    }
+});
+
+app.use("/",router);
+
+app.listen(3000,function(){
+    console.log("Live at Port 3000");
+});

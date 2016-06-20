@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0048)http://notmasteryet.github.io/jpgjs/example.html -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/JabongSurvey/helloold.js"></script>
+  <style type="text/css">
+input[type="submit"] {
+    align-content: center;
+    /* width: 20%; */
+    padding: 20px 50px;
+    /* height: 40px; */
+    margin-left: 40%;
+    margin-top: 10%;
+    text-decoration: none!important;
+    background-color: gray;
+    border: 0;
+}
+p {
+    margin: 100px 50px 10px;
+}
+.content {
+    display: none;
+}
+button {
+    margin-top: 45px;
+    margin-left: 40%;
+}
+
+
+button.back {
+    margin-left: 24%;
+}
+
+.back {
+    text-decoration: none;
+    background-color: gray;
+    padding: 20px 40px;
+    color: white;
+    border: none;
+}
+.back {
+    display: none;
+}
+.end {
+    display: none;
+}
+.next {
+    text-decoration: none;
+    background-color: gray;
+    padding: 20px 40px;
+    color: white;
+    border: none;
+}
+  </style>
+</head>
+
+<body>
+<div class="content-holder">
+<form action="/postdata" method="post">		
+<div class="col-lg-12 col-md-12 content" id="content-1" data-id='1' style="display: block;">    
+  <div class="col-lg-8 col-md-8">
+		 <canvas class="col-lg-6 col-md-6" id="Q1"></canvas>   
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/1.jpg" width="40%">
+  </div>
+  <div class="col-lg-4 col-md-4">
+  
+  <p><b><label style="font-size: 25px;"> Question 1: </label> </b></p>
+  <input type="radio" name="q1" id="q1-0" value="0"  style="border-style:none;margin-left:50px;"  > <label style="font-size: 25px;" for="q1-0"> Left is better </label> <br>
+  <input type="radio" name="q1"  id="q1-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q1-1"> Right is better</label> <br>
+  <input type="radio" name="q1" id="q1-2"  value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q1-2"> Both are same </label> <br>
+
+    
+  </div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-2" data-id='2'>   
+  <div class="col-lg-8 col-md-8">		
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/2.jpg" width="40%">
+		<canvas class="col-lg-6 col-md-6" id="Q2"></canvas>   
+	</div>
+
+<div class="col-lg-4 col-md-4">
+
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 2: </label> </b></p>
+  <input type="radio" name="q2" id="q2-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q2-0"> Left is better </label> <br>
+  <input type="radio" name="q2" id="q2-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q2-1"> Right is better</label> <br>
+  <input type="radio" name="q2"id="q2-2"  value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q2-2"> Both are same </label> <br>
+
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-3" data-id='3'>   
+  <div class="col-lg-8 col-md-8">
+		<canvas class="col-lg-6 col-md-6" id="Q3"></canvas>   
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/3.jpg" width="40%">
+  </div>
+<div class="col-lg-4 col-md-4">
+   <br>
+   <p><b><label style="font-size: 25px;"> Question 3: </label> </b></p>
+  <input type="radio" name="q3" id="q3-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q3-0"> Left is better </label> <br>
+  <input type="radio" name="q3" id="q3-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q3-1"> Right is better</label> <br>
+  <input type="radio" name="q3" id="q3-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q3-2"> Both are same </label> <br>
+
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-4" data-id='4'>   
+  <div class="col-lg-8 col-md-8">
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/4.jpg" width="40%">
+		<canvas class="col-lg-6 col-md-6" id="Q4"></canvas>
+  </div>  
+<div class="col-lg-4 col-md-4">
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 4: </label> </b></p>
+  <input type="radio" name="q4" id="q4-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q4-0"> Left is better </label> <br>
+  <input type="radio" name="q4" id="q4-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q4-1"> Right is better</label> <br>
+  <input type="radio" name="q4" id="q4-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q4-2"> Both are same </label> <br>
+ 
+  <br><br>
+    <br><br>
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-5" data-id='5'>   
+  <div class="col-lg-8 col-md-8">
+		<canvas class="col-lg-6 col-md-6" id="Q5"></canvas>   
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/5.jpg" width="40%">
+  </div>
+		
+<div class="col-lg-4 col-md-4">
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 5: </label> </b></p>
+  <input type="radio" name="q5" id="q5-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q5-0"> Left is better </label> <br>
+  <input type="radio" name="q5" id="q5-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q5-1"> Right is better</label> <br>
+  <input type="radio" name="q5" id="q5-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q5-2"> Both are same </label> <br>
+
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-6" data-id='6'>   
+  <div class="col-lg-8 col-md-8">
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/6.jpg" width="40%">
+		<canvas class="col-lg-6 col-md-6" id="Q6"></canvas>   
+  </div>
+
+<div class="col-lg-4 col-md-4">
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 6: </label> </b></p>
+  <input type="radio" name="q6" id="q6-0"  value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q6-0"> Left is better </label> <br>
+  <input type="radio" name="q6" id="q6-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q6-1"> Right is better</label> <br>
+  <input type="radio" name="q6" id="q6-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q6-2"> Both are same </label> <br>
+
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-7" data-id='7'>   
+  <div class="col-lg-8 col-md-8">
+		<canvas class="col-lg-6 col-md-6" id="Q7"></canvas>   
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/7.jpg" width="40%">
+	</div>
+<div class="col-lg-4 col-md-4">
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 7: </label> </b></p>
+  <input type="radio" name="q7" id="q7-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q7-0"> Left is better </label> <br>
+  <input type="radio" name="q7" id="q7-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q7-1"> Right is better</label> <br>
+  <input type="radio" name="q7" id="q7-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q7-2"> Both are same </label> <br>
+
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-8" data-id='8'>   
+  <div class="col-lg-8 col-md-8">
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/8.jpg" width="40%">
+		<canvas class="col-lg-6 col-md-6" id="Q8"></canvas>
+  </div>	
+<div class="col-lg-4 col-md-4">
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 8: </label> </b></p>
+  <input type="radio" name="q8" id="q8-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q8-0"> Left is better </label> <br>
+  <input type="radio" name="q8" id="q8-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q8-1"> Right is better</label> <br>
+  <input type="radio" name="q8" id="q8-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q8-2"> Both are same </label> <b>
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-9" data-id='9'>   
+  <div class="col-lg-8 col-md-8">
+		<canvas class="col-lg-6 col-md-6" id="Q9"></canvas>   
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/9.jpg" width="40%">
+	</div>
+<div class="col-lg-4 col-md-4">
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 9: </label> </b></p>
+  <input type="radio" name="q9" id="q9-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q9-0"> Left is better </label> <br>
+  <input type="radio" name="q9" id="q9-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q9-1"> Right is better</label> <br>
+  <input type="radio" name="q9" id="q9-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q9-2"> Both are same </label> <br>
+
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-10" data-id='10'>   
+  <div class="col-lg-8 col-md-8">
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/10.jpg" width="40%">
+		<canvas class="col-lg-6 col-md-6" id="Q10"></canvas>   
+  </div>
+<div class="col-lg-4 col-md-4">
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 10: </label> </b></p>
+  <input type="radio" name="q10" id="q10-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q10-0"> Left is better </label> <br>
+  <input type="radio" name="q10" id="q10-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q10-1"> Right is better</label> <br>
+  <input type="radio" name="q10" id="q10-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q10-2"> Both are same </label> <br>
+
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-11" data-id='11'>   
+  <div class="col-lg-8 col-md-8">
+		<canvas class="col-lg-6 col-md-6" id="Q11"></canvas>   
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/11.jpg" width="40%">
+	</div>
+<div class="col-lg-4 col-md-4">
+    <br>
+   <p><b><label style="font-size: 25px;"> Question 11: </label> </b></p>
+  <input type="radio" name="q11" id="q11-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q11-0"> Left is better </label> <br>
+  <input type="radio" name="q11" id="q11-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q11-1"> Right is better</label> <br>
+  <input type="radio" name="q11" id="q11-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q11-2"> Both are same </label> <br>
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-12" data-id='12'>   
+  <div class="col-lg-8 col-md-8">
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/12.jpg" width="40%">
+		<canvas class="col-lg-6 col-md-6" id="Q12"></canvas>   
+	</div>
+<div class="col-lg-4 col-md-4">
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 12: </label> </b></p>
+  <input type="radio" name="q12" id="q12-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q12-0"> Left is better </label> <br>
+  <input type="radio" name="q12" id="q12-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q12-1"> Right is better</label> <br>
+  <input type="radio" name="q12" id="q12-2"  value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q12-2"> Both are same </label> <br>
+
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-13" data-id='13'>   
+  <div class="col-lg-8 col-md-8">
+		<canvas class="col-lg-6 col-md-6" id="Q13"></canvas>   
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/13.jpg" width="40%">
+	</div>
+<div class="col-lg-4 col-md-4">
+    
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 13: </label> </b></p>
+  <input type="radio" name="q13" id="q13-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q13-0"> Left is better </label> <br>
+  <input type="radio" name="q13" id="q13-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q13-1"> Right is better</label> <br>
+  <input type="radio" name="q13" id="q13-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q13-2"> Both are same </label> <br>
+
+
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-14" data-id='14'>   
+  <div class="col-lg-8 col-md-8">
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/14.jpg" width="40%">
+		<canvas class="col-lg-6 col-md-6" id="Q14"></canvas>
+  </div> 
+<div class="col-lg-4 col-md-4">
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 14: </label> </b></p>
+  <input type="radio" name="q14" id="q14-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q14-0"> Left is better </label> <br>
+  <input type="radio" name="q14" id="q14-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q14-1"> Right is better</label> <br>
+  <input type="radio" name="q14" id="q14-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q14-2"> Both are same </label> <br>
+
+</div>
+</div>
+
+<div class="col-lg-12 col-md-12 content" id="content-15" data-id='15'>   
+  <div class="col-lg-8 col-md-8">
+		<canvas class="col-lg-6 col-md-6" id="Q15"></canvas>   
+		<img class="col-lg-6 col-md-6" src="/static/JabongSurvey/15.jpg" width="40%"> 
+  </div>
+<div class="col-lg-4 col-md-4">
+  <br>
+   <p><b><label style="font-size: 25px;"> Question 15: </label> </b></p>
+  <input type="radio" name="q15" id="q15-0" value="0"  style="border-style:none;margin-left:50px;" > <label style="font-size: 25px;" for="q15-0"> Left is better </label> <br>
+  <input type="radio" name="q15" id="q15-1" value="1" style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q15-1"> Right is better</label> <br>
+  <input type="radio" name="q15" id="q15-2" value="2"  style="border-style:none;margin-left:50px;">  <label style="font-size: 25px;" for="q15-2"> Both are same </label> <br>
+
+</div> 
+</div>
+
+    <button type="button" class="back">Back</button>
+    <button type="button" class="next">Next</button> 
+</div>
+<div class="end" data-id='16'>
+  <input type="submit" onclick="saveState()" value="Submit">
+</div>
+</form>
+<script>
+	DI("Q1", "/static/JabongSurvey/1.icom");
+	DI("Q2", "/static/JabongSurvey/2.icom");
+	DI("Q3", "/static/JabongSurvey/3.icom");
+	DI("Q4", "/static/JabongSurvey/4.icom");
+	DI("Q5", "/static/JabongSurvey/5.icom");
+	DI("Q6", "/static/JabongSurvey/6.icom");
+	DI("Q7", "/static/JabongSurvey/7.icom");
+	DI("Q8", "/static/JabongSurvey/8.icom");
+	DI("Q9", "/static/JabongSurvey/9.icom");
+	DI("Q10", "/static/JabongSurvey/10.icom");
+	DI("Q11", "/static/JabongSurvey/11.icom");
+	DI("Q12", "/static/JabongSurvey/12.icom");
+	DI("Q13", "/static/JabongSurvey/13.icom");
+	DI("Q14", "/static/JabongSurvey/14.icom");
+	DI("Q15", "/static/JabongSurvey/15.icom");
+</script>
+<script type="text/javascript">
+$('.submit-btn').on("click", saveState());
+$('.submit-btn').on("click", function(){
+  console.log("THANKS FOR YOUR RESPONSE");
+})
+</script>
+</body>
+<script>
+$('.next').on("click", function() { 
+    var id = $('.content:visible').data('id');
+    var nextId = $('.content:visible').data('id')+1;
+    $('[data-id="'+id+'"]').hide();
+    $('[data-id="'+nextId+'"]').show();
+    
+    if($('.back:hidden').length == 1){
+        $('.back').show();
+    }
+    
+    if(nextId == 16){
+        $('.content-holder').hide();
+        $('.end').show();
+    }
+});
+
+$('.back').on("click", function() { 
+    var id = $('.content:visible').data('id');
+    var prevId = $('.content:visible').data('id')-1;
+    $('[data-id="'+id+'"]').hide();
+    $('[data-id="'+prevId+'"]').show();
+    
+    if(prevId == 1){
+        $('.back').hide();
+    }    
+});
+
+$('body').on('click', '.edit-previous', function() { 
+    $('.end').hide();
+    $('.content-holder').show();
+    $('#content-15').show();
+});
+</script>
+</html>

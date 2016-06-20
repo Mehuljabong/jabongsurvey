@@ -1,0 +1,23 @@
+{
+  "name": "sapient_nitro_weather",
+  "version": "1.0.0",
+  "description": "Weather api assignment for sapient",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "assignment",
+    "weather",
+    "api",
+    "express",
+    "rest"
+  ],
+  "author": "echorohit",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "express": "^4.13.4",
+    "request": "^2.72.0"
+  }
+}
