@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script type="text/javascript" src="/static/JabongSurvey/helloold.js"></script>
@@ -25,6 +25,7 @@ input[type="submit"] {
 p {
     margin: 100px 50px 10px;
 }
+
 .content {
     display: none;
 }
@@ -297,7 +298,7 @@ button.back {
 </div>
 
     <button type="button" class="back">Back</button>
-    <button type="button" class="next">Next</button> 
+    <button type="button" class="next disabled">Next</button> 
 </div>
 <div class="end" data-id='16'>
   <input type="submit" onclick="saveState()" value="Submit">
@@ -321,28 +322,38 @@ button.back {
 	DI("Q15", "/static/JabongSurvey/15.icom");
 </script>
 <script type="text/javascript">
-$('.submit-btn').on("click", saveState());
+$('.submit-btn').on("click", saveState);
 $('.submit-btn').on("click", function(){
   console.log("THANKS FOR YOUR RESPONSE");
 })
 </script>
 </body>
 <script>
-$('.next').on("click", function() { 
-    var id = $('.content:visible').data('id');
-    var nextId = $('.content:visible').data('id')+1;
-    $('[data-id="'+id+'"]').hide();
-    $('[data-id="'+nextId+'"]').show();
-    
-    if($('.back:hidden').length == 1){
-        $('.back').show();
-    }
-    
-    if(nextId == 16){
-        $('.content-holder').hide();
-        $('.end').show();
-    }
+$('input[type=radio]').on('click', function() {
+   $('.next').removeClass('disabled');
 });
+ 
+
+  $('.next').on("click", function() {
+      if($('.next').hasClass('disabled')) {
+     //do nothing
+        alert('Please select an option'); 
+      } else {
+        var id = $('.content:visible').data('id');
+        var nextId = $('.content:visible').data('id')+1;
+        $('[data-id="'+id+'"]').hide();
+        $('[data-id="'+nextId+'"]').show();
+        
+        if($('.back:hidden').length == 1){
+            $('.back').show();
+        }
+         $('.next').addClass('disabled');
+        if(nextId == 16){
+            $('.content-holder').hide();
+            $('.end').show();
+        }  
+      }
+  });
 
 $('.back').on("click", function() { 
     var id = $('.content:visible').data('id');
@@ -360,5 +371,6 @@ $('body').on('click', '.edit-previous', function() {
     $('.content-holder').show();
     $('#content-15').show();
 });
+
 </script>
 </html>
