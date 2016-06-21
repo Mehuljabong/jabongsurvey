@@ -1,11 +1,18 @@
 {
   "name": "JabongSurvey",
   "version": "1.0.0",
-  "description": "Survey Project",
+  "description": "Survey for Jabong",
   "main": "app.js",
   "scripts": {
     "test": "npm test"
   },
+  "keywords": [
+    "assignment",
+    "weather",
+    "api",
+    "express",
+    "rest"
+  ],
   "author": "Mehuljabong",
   "license": "ISC",
   "dependencies": {

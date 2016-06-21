@@ -2,8 +2,7 @@
 var express = require("express");
 var app = express();
 var router = express.Router();
-var async = require('async');
-var request = require('request');
+
 var path = __dirname + '/views/';
 var fs = require('fs');
 
@@ -52,7 +51,9 @@ router.post('/postdata', function(req, res){
 
 	fs.appendFile(filePath, dataToWrite, function() { 
 			//res.end(); 
-			res.send(req.body);
+			res.set('content-type','text/html');
+			res.send(fs.readFileSync(__dirname+'/views/thanks.html','utf8'));
+ 			res.end();
 	});	
 	
 	// req.on('data', function(data) { body += data; }); 
